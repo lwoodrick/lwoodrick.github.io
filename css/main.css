@@ -781,9 +781,18 @@ a.link-out {
 [class*="zocial-"]:before {
   font-family: 'zocial', sans-serif; }
 
+.zocial-linkedin:before {
+  content: "L"; }
+
+.zocial-twitter:before {
+  content: "T"; }
+
 /* line 17, site.css.scss */
 [class*="brandico-"]:before {
   font-family: 'brandico', sans-serif; }
+
+.brandico-github:before {
+  content: "\f308"; }
 
 /* line 21, site.css.scss */
 body {
