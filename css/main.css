@@ -4,7 +4,7 @@
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,700");
-@import url(http://weloveiconfonts.com/api/?family=brandico|zocial);
+@import url("http://weloveiconfonts.com/api/?family=brandico|zocial");
 /* line 8, _normalize.scss */
 html {
   font-family: sans-serif;
