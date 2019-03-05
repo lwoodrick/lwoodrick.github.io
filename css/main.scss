@@ -1,0 +1,97 @@
+---
+# Hey, Jekyll? It's me, Lauren.
+---
+
+@import "normalize";
+@import "layout";
+@import "animation";
+
+
+
+/* line 1, _typography.scss */
+h1.entry-title {
+  margin-bottom: 1rem; }
+
+/* line 5, _typography.scss */
+a.link-out {
+  text-decoration: underline !important; }
+
+/* line 21, site.css.scss */
+body {
+  background: #fff;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5; }
+
+/* line 28, site.css.scss */
+.logo img {
+  height: 18.75em;
+  margin-top: 6em; }
+
+/* line 33, site.css.scss */
+h1 {
+  color: #333;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.75em;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: lowercase;
+  margin: 1rem auto 0 auto; }
+  /* line 42, site.css.scss */
+  h1 span {
+    display: inline-block;
+    padding: 0 0.25em; }
+    /* line 46, site.css.scss */
+    h1 span:first-child {
+      font-size: 2.5rem; }
+  /* line 51, site.css.scss */
+  h1 .subtitle {
+    font-weight: 400;
+    padding: 0 0.35em; }
+
+/* line 57, site.css.scss */
+.doc {
+  margin: 3em 0;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 300; }
+  /* line 63, site.css.scss */
+  .doc a {
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 0.75em 0.7em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.1s linear; }
+    /* line 70, site.css.scss */
+    .doc a:hover {
+      background: rgba(0, 0, 0, 0.2);
+      color: white;
+      transition: all 0.15s linear; }
+
+/* line 78, site.css.scss */
+ul.social {
+  font-family: "Font Awesome";
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  padding-top: 1.5rem;
+  opacity: 0;
+  margin-top: -4px;
+  animation: 0.7s 3.2s cubic-bezier(0.41, 0.02, 0.39, 0.71) forwards logo-wipe; }
+  /* line 88, site.css.scss */
+  ul.social a {
+    text-decoration: none; }
+    /* line 90, site.css.scss */
+    ul.social a:link, ul.social a:visited {
+      color: #333; }
+    /* line 91, site.css.scss */
+    ul.social a:active {
+      color: #222; }
+    /* line 92, site.css.scss */
+    ul.social a:hover, ul.social a:focus {
+      color: #2d43d0; }
+  /* line 95, site.css.scss */
+  ul.social li {
+    display: inline-block;
+    margin-right: 1rem; }
