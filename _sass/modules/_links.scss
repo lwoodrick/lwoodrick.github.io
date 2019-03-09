@@ -1,0 +1,210 @@
+///////////////////////////////////
+//             LINKS             //
+///////////////////////////////////
+
+// In-Copy Links
+
+a.link {
+  display: inline-block;
+  padding: 0 0.25rem;
+  margin: 0 -0.25rem;
+  text-decoration: none;
+  color: $gray;
+  border-bottom: 1px solid $black;
+  transition: $transition;
+
+  &:visited {
+    color: $gray;
+  }
+
+  &:hover, &:focus {
+    color: $black;
+    background-color: yellow;
+  }
+}
+
+a.link--reverse {
+  color: $white;
+  border-bottom: $border-white;
+
+  &:visited {
+    color: $white;
+  }
+
+  &:hover, &:focus {
+    color: $white;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+// One-Off Links
+
+a.link-to-about {
+  align-self: flex-end;
+}
+a.link-to-work {
+  justify-self: center;
+  bottom: 3rem;
+
+  @media (max-width: 1300px) {
+    bottom: 8rem;
+  }
+
+  @media (max-width: 768px) {
+
+    &:before, &:after {
+      display: none;
+    }
+
+    bottom: 4rem;
+  }
+}
+
+// Ribbon Links
+
+a.link--ribbon {
+  display: block;
+  position: absolute;
+  bottom: 3rem;
+  z-index: 2;
+  margin-left: 0;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  box-shadow: $box-shadow;
+  transition: $transition;
+
+  &:hover, &:focus {
+    margin-left: -1rem;
+  }
+}
+
+// Section Jump Links
+
+a.section-link {
+  display: block;
+  position: relative;
+  height: 2rem;
+  margin: 0 auto;
+  text-decoration: none;
+  text-align: center;
+
+  &:focus {
+    outline:0;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+    color: $gray;
+    margin-top: 0rem;
+    padding: 0 0.5rem;
+    font-weight: normal;
+    font-size: 1.25rem;
+    text-transform: lowercase;
+    background-color: $white;
+    border-bottom: 1px solid $gray;
+    transition: $transition;
+  }
+
+  &:hover span, &:focus span {
+    color: $black;
+    background-color: yellow;
+    border-bottom: 1px solid $black;
+    text-decoration: none;
+  }
+  &:visited span {
+    text-decoration: none;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 1px;
+    height: 6.25rem;
+    top: -2rem;
+    background-color: $gray;
+    left: calc(50% - 0.5px);
+    transition: $transition;
+  }
+
+  &:hover:before, &:focus:before {
+    background-color: $black;
+    height: 9rem;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 1rem;
+    height: 1rem;
+    transform: rotate(-135deg);
+    border-top: 1px solid $gray;
+    border-left: 1px solid $gray;
+    bottom: -2.2rem;
+    left: calc(50% - 8.5px);
+    transition: $transition;
+  }
+
+  &:hover:after, &:focus:after {
+    bottom: -4.9rem;
+    border-top: 1px solid $black;
+    border-left: 1px solid $black;
+  }
+
+  // Reverse Copy Version
+
+  &--reverse {
+    span {
+      background-color: #ff541e;
+      color: $white;
+      border-color: $white;
+    }
+    &:hover span, &:focus span {
+      color: $white;
+      background-color: mix(#ff541e, #000, 10%);
+      border-color: $white;
+      text-decoration: none;
+    }
+    &:before, &:hover:before, &:focus:before {
+      background-color: $white !important;
+    }
+    &:after, &:hover:after, &:focus:after {
+      border-color: $white !important;
+    }
+  }
+
+  &--horizontal {
+
+    &:before {
+      width: 8.25rem;
+      height: 1px;
+      top: 1.9rem;
+      right: 0;
+      left: -2rem;
+    }
+    &:hover:before, &:focus:before {
+      width: 9.25rem;
+      height: 1px;
+      top: 1.9rem;
+      right: 0;
+      left: -3rem;
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+      bottom: 0;
+      left: -1.9rem;
+      bottom: -7px;
+    }
+
+    &:hover:after, &:focus:after {
+      bottom: 0;
+      left: -2.8rem;
+      bottom: -7px;
+    }
+  }
+}

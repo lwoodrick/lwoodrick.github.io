@@ -1,0 +1,146 @@
+///////////////////////////////////
+//           UTILITIES           //
+///////////////////////////////////
+
+// BOX MODEL
+
+$marginKey: 'm';
+$paddingKey: 'p';
+$separator: '-';
+$sizes: (
+    ('0', 0rem),
+    ('0125', 0.125rem),
+    ('025', 0.25rem),
+    ('05', 0.5rem),
+    ('1', 1rem),
+    ('2', 2rem),
+    ('4', 4rem),
+    ('auto', auto)
+);
+$positions: (
+    ('a', ''),
+    ('t', '-top'),
+    ('r', '-right'),
+    ('b', '-bottom'),
+    ('l', '-left')
+);
+
+@function sizeValue($key, $value) {
+    @return if($key == 'none', 0, $value);
+}
+
+@each $size in $sizes {
+    $sizeKey: nth($size, 1);
+    $sizeValue: nth($size, 2);
+    .#{$marginKey}#{$separator}#{$sizeKey} {
+        margin: sizeValue($sizeKey, $sizeValue) !important;
+    }
+    .#{$paddingKey}#{$separator}#{$sizeKey} {
+        padding: sizeValue($sizeKey, $sizeValue) !important;
+    }
+    @each $position in $positions {
+        $posKey: nth($position, 1);
+        $posValue: nth($position, 2);
+        .#{$marginKey}#{$posKey}#{$separator}#{$sizeKey} {
+            margin#{$posValue}: sizeValue($sizeKey, $sizeValue) !important;
+        }
+        .#{$paddingKey}#{$posKey}#{$separator}#{$sizeKey} {
+            padding#{$posValue}: sizeValue($sizeKey, $sizeValue) !important;
+        }
+    }
+}
+
+// TEXT
+
+// Text Align
+
+.ta-left { text-align: left; }
+.ta-center { text-align: center; }
+.ta-right { text-align: right; }
+
+// Font Size
+
+.fs-1 {
+  font-size: 1rem;
+
+  @media (max-height: 900px) {
+    font-size: 0.85rem;
+  }
+}
+.fs-1-5 {
+  font-size: 1.5rem;
+
+  @media (max-height: 900px) {
+    font-size: 1rem;
+  }
+}
+.fs-2 {
+  font-size: 2rem;
+
+  @media (max-height: 900px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.25rem;
+  }
+}
+.fs-4 {
+  font-size: 4rem;
+
+  @media (max-height: 900px) {
+    font-size: 2.5rem;
+  }
+}
+.fs-6 {
+  font-size: 6rem;
+
+  @media (max-height: 900px), (max-width: 900px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
+}
+
+// Font Weight
+
+.fw-200 { font-weight: 200; }
+.fw-400 { font-weight: 400; }
+.fw-700 { font-weight: 700; }
+.fw-900 { font-weight:900; }
+
+// BACKGROUND COLORS
+
+.bg-black {
+  background-color: $black;
+}
+.bg-white {
+  background-color: $white;
+}
+.bg-gradient {
+  background: $brand-gradient;
+}
+
+// BORDER COLORS
+
+.border-black { box-sizing: border-box; border: $border-black; }
+.border-gray { box-sizing: border-box; border: $border-gray; }
+.border-light-gray { box-sizing: border-box; border: $border-light-gray; }
+
+// TEXT COLORS
+
+.color-black {
+  color: $black;
+}
+.color-white {
+  color: $white;
+}
+.color-gray {
+  color: $gray;
+}
+
+// FLOAT
+
+.fl-left { float: left; }
+.fl-right { float: right; }

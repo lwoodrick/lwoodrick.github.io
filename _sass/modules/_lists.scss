@@ -1,0 +1,77 @@
+///////////////////////////////////
+//             LISTS             //
+///////////////////////////////////
+
+// Social Media Roll
+
+
+// Standard List
+
+ul.list {
+  margin-top: 0.5rem;
+  padding-left: 1.75rem;
+
+  li {
+    position: relative;
+    list-style-type: none;
+
+    &:not(:last-child) {
+      margin-bottom: 0.25rem;
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      top: -0.25rem;
+      left: -1.75rem;
+      border-bottom: $border-white;
+    }
+    &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 0.5rem;
+      height: 0.5rem;
+      left: -1.35rem;
+      top: 0.5rem;
+      border-bottom: $border-white;
+      border-right: $border-white;
+      transform: rotate(-45deg);
+    }
+
+    @media (max-width: 768px) {
+      margin: 0;
+    }
+  }
+}
+
+
+ul.social {
+  font-family: "Font Awesome";
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  padding-top: 1.5rem;
+  opacity: 0;
+  margin-top: -4px;
+  animation: 0.7s 3.2s cubic-bezier(0.41, 0.02, 0.39, 0.71) forwards logo-wipe;
+}
+ul.social a {
+  text-decoration: none;
+}
+ul.social a:link, ul.social a:visited {
+  color: #333;
+}
+ul.social a:active {
+  color: #222;
+}
+ul.social a:hover, ul.social a:focus {
+  color: #2d43d0;
+}
+ul.social li {
+  display: inline-block;
+  margin-right: 1rem;
+}

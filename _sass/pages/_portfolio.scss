@@ -1,0 +1,283 @@
+///////////////////////////////////
+//         PORTFOLIO PAGE        //
+///////////////////////////////////
+
+.content--portfolio {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: grid;
+  color: #222;
+  grid-template-rows: 8rem 36rem auto auto 25rem 25rem 8rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "logo . link-back"
+    "hero hero hero"
+    "subtitle subtitle sidebar"
+    "copy-1 copy-1 sidebar"
+    "image-1 image-2 image-3"
+    "image-4 copy-2 copy-2"
+    "link-back-2 . .";
+
+// Tablet Grid
+
+@media (max-width: 1024px) {
+  grid-template-rows: 8rem 36rem auto auto 25rem auto auto 8rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "logo link-back"
+    "hero hero"
+    "subtitle sidebar"
+    "copy-1 copy-1"
+    "image-1 image-2"
+    "image-3 image-4"
+    "copy-2 copy-2"
+    "link-back-2 .";
+}
+
+// Tablet Grid
+
+@media (max-width: 768px) {
+  grid-template-rows: 8rem 36rem auto auto auto 25rem auto auto 8rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "logo link-back"
+    "hero hero"
+    "subtitle subtitle"
+    "sidebar sidebar"
+    "copy-1 copy-1"
+    "image-1 image-2"
+    "image-3 image-4"
+    "copy-2 copy-2"
+    "link-back-2 .";
+}
+
+@media (max-width: 600px) {
+  grid-template-rows: 8rem 16rem auto auto auto auto auto auto auto auto 8rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "logo link-back"
+    "hero hero"
+    "subtitle subtitle"
+    "sidebar sidebar"
+    "copy-1 copy-1"
+    "image-1 image-1"
+    "image-2 image-2"
+    "image-3 image-3"
+    "copy-2 copy-2"
+    "image-4 image-4"
+    "link-back-2 .";
+}
+
+// Cell Styles
+
+    .section-logo {
+      grid-area: logo;
+      position: relative;
+      left: -1rem;
+
+      @media (max-width: 1300px) {
+        left: 0.5rem;
+      }
+
+      .logotype { margin: 2rem 0; }
+    }
+
+    .section-link {
+      grid-area: link-back;
+    }
+
+    .section-hero {
+      grid-area: hero;
+      position: relative;
+      overflow: hidden;
+      background-color: #222;
+
+      img.hero {
+        display: block;
+        z-index: 1;
+        width: 110%;
+        height: auto;
+        margin: -15.5rem 0 0px -7rem;
+      }
+
+      h1 {
+        @extend .fs-6;
+        position: absolute;
+        z-index: 2;
+        padding: 1rem;
+        background: $brand-gradient;
+        color: #fff;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        bottom: 2rem;
+
+        @media (max-width: 600px) {
+          margin-left: 1rem;
+          margin-right: 1rem;
+          bottom: 1rem;
+        }
+      }
+    }
+
+    // Specific Page Heroes
+
+    .section-hero--lendkey img.hero {
+      display: block;
+      z-index: 1;
+      width: auto;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .section-hero--pff img.hero {
+      display: block;
+      z-index: 1;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .section-hero--pff-2 img.hero {
+      display: block;
+      z-index: 1;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+
+      @media (max-width: 980px) {
+        height: 100%;
+        width: auto;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+        height: auto;
+      }
+      @media (max-width: 480px) {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .section-hero--gis img.hero {
+      display: block;
+      z-index: 1;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+
+      @media (max-width: 1024px) {
+        height: 100%;
+        width: auto;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+
+// Subtitle Below Hero
+
+    .section-subtitle {
+      grid-area: subtitle;
+      padding: 2rem;
+
+      h2 {
+        font-weight: 300;
+        text-transform: none;
+      }
+
+      @media (max-width: 768px) {
+        padding: 2rem 1rem;
+      }
+    }
+
+// Copy Areas
+
+    .section-copy {
+      columns: 2;
+      padding: 2rem;
+
+      p {
+        line-height: 2;
+        &:not(:first-child) {
+          margin-top: 1rem;
+          text-indent: 1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        padding: 2rem 1rem;
+      }
+
+      @media (max-width: 600px) {
+        columns: 1;
+      }
+    }
+
+    .section-copy-1 {
+      @extend .section-copy;
+      grid-area: copy-1;
+      padding-top: 0;
+    }
+
+    .section-copy-2 {
+      @extend .section-copy;
+      grid-area: copy-2;
+    }
+
+    .section-thumbnail-1 { grid-area: image-1; @extend .section-thumbnail }
+
+    .section-thumbnail-2 { grid-area: image-2; @extend .section-thumbnail }
+
+    .section-thumbnail-3 { grid-area: image-3; @extend .section-thumbnail }
+
+    .section-thumbnail-4 { grid-area: image-4; @extend .section-thumbnail }
+
+    .section-thumbnail {
+      max-width: 25rem;
+      position: relative;
+
+      img.sample {
+        width: 100%;
+      }
+
+      img.sample--outlined {
+        border: $border-light-gray;
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 600px) {
+        max-width: 37.5rem;
+      }
+    }
+
+    .section-thumbnail--outlined {
+      border: $border-light-gray;
+      box-sizing: border-box;
+    }
+
+    // Specific Thumbnail Handling
+
+    .section-link-2 {
+      grid-area: link-back-2;
+
+      @media (max-width: 600px) {
+        left: 3rem;
+      }
+    }
+
+  .section-sidebar {
+    grid-area: sidebar;
+    align-self: flex-start;
+    margin: 2rem;
+    padding: 1rem;
+    border: 1px solid #222;
+
+    @media (max-width: 768px) {
+      width: auto;
+      margin: 0 1rem 2rem 1rem;
+    }
+  }
+}

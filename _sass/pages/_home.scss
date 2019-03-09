@@ -1,0 +1,285 @@
+///////////////////////////////////
+//           HOME PAGE           //
+///////////////////////////////////
+
+
+//////////////////
+// Sections
+//////////////////
+
+
+// Intro/Nameplate
+
+.row--nameplate {
+  // Generic Row Styles for Reference:
+  // grid-template-rows: auto;
+  // grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". nameplate .";
+  .content {
+    grid-area: nameplate;
+  }
+}
+
+.nameplate-container {
+  width: 19rem;
+  height: 20rem;
+  margin: 0 auto;
+}
+
+// About Me
+
+.row--about {
+  // Generic Row Styles for Reference:
+  // grid-template-rows: auto;
+  // grid-template-columns: 1fr 1fr 1fr;
+  background: $brand-gradient;
+  height: 100vh;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas:
+    ". . ."
+    "about about about"
+    ". . .";
+  .content {
+    grid-area: about;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-rows: auto;
+    grid-template-areas:
+      "about about about";
+  }
+}
+
+.content--about {
+  display: grid;
+  color: $white;
+  max-height: 50rem;
+  grid-template-rows: 4rem calc(100% - 4rem);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "section-name . ."
+    "copy . skills";
+
+  @media (max-width: 1300px) {
+    grid-template-areas:
+      "section-name . ."
+      "copy copy skills";
+  }
+
+  @media (max-width: 768px) {
+    margin: unset;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3rem 1fr 1fr;
+    grid-template-areas:
+      "section-name"
+      "copy"
+      "skills";
+  }
+
+  // Grid Area Assignment
+  .section-title {
+    grid-area: section-name;
+  }
+  .section-copy {
+    grid-area: copy;
+
+    @media (max-width: 1300px) {
+      margin-right: 2rem;
+    }
+    @media (max-width: 600px) {
+      margin-right: 0;
+    }
+  }
+
+  .section-sidebar__container {
+    grid-area: skills;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .section-sidebar {
+    align-self: flex-start;
+    max-width: 20rem;
+    margin-top: 1rem;
+    margin-left: auto;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+      max-width: none;
+    }
+  }
+  .section-link {
+    margin-right: 0;
+    border-bottom: 0;
+    background-color: inherit;
+
+    &:link, &:visited {
+      border-bottom: none;
+    }
+
+    &:hover, &:focus {
+      border-bottom: none;
+      background: none !important;
+    }
+  }
+}
+
+// Work Listing
+
+.row--work {
+  // Generic Row Styles for Reference:
+  // grid-template-rows: auto;
+  // grid-template-columns: 1fr 1fr 1fr;
+  height: 100vh;
+  grid-template-rows: 1fr 55rem 1fr;
+  grid-template-areas:
+    ". . ."
+    "work work work"
+    ". . .";
+  background: url('../images/planes.svg');
+  background-size: auto 90%;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  .content {
+    grid-area: work;
+  }
+
+  @media (max-width: 1024px) {
+    background: $black-to-blue-gradient;
+    grid-template-areas:
+      "work work work";
+    grid-template-rows: auto;
+    overflow: auto;
+    height: auto;
+  }
+}
+
+.content--work {
+  display: grid;
+  color: #222;
+  grid-template-rows: 4rem 24rem 17rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "section-name work work"
+    "copy work work"
+    "copy work work";
+
+  @media (max-width: 1024px) {
+    grid-template-rows: 4rem 24rem auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "section-name work"
+      "copy work"
+      "copy work";
+  }
+
+  @media (max-width: 768px) {
+    grid-template-rows: 3rem auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "section-name"
+      "copy"
+      "work";
+  }
+
+  // Grid Area Assignment
+  .section-title {
+    grid-area: section-name;
+
+    @media (max-width: 1024px) {
+      color: $white;
+    }
+  }
+  .section-copy {
+    grid-area: copy;
+
+    @media (max-width: 1024px) {
+      background-color: $white;
+      padding: 1.5rem;
+      align-self: start;
+    }
+  }
+  .section-sidebar {
+    grid-area: work;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-self: flex-start;
+    height: 100%;
+    margin-top: 1rem;
+    margin-right: 6rem;
+    padding: 2rem;
+    border: none;
+
+    @media (max-width: 1024px) {
+      margin-right: 0;
+      background: none;
+      justify-content: unset;
+      padding-top: 3rem;
+
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 2rem;
+      padding: 0;
+      justify-content: unset;
+    }
+  }
+  .section-link {
+    grid-area: link;
+    align-self: center;
+  }
+
+  .case-study {
+    display: block;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    padding: 1rem;
+    text-decoration: none;
+    margin-left: 0;
+    margin-right: 0;
+    transition: $transition;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &:hover, &:focus {
+      margin-left: -1rem;
+      margin-right: 1rem;
+    }
+
+    &__tag {
+      display: flex;
+      text-transform: lowercase;
+      color: $gray;
+
+      span { display: inline-block; }
+
+      &:hover, &:focus, &:visited {
+        color: $gray;
+      }
+    }
+    &__description {
+      @extend .fs-1-5;
+      color: $black;
+
+      &:hover, &:focus, &:visited {
+        color: $black;
+      }
+
+      @media (max-width: 1024px) {
+        line-height: 1.2;
+      }
+    }
+    &__client {
+      color: $gray;
+
+      &:hover, &:focus, &:visited {
+        color: $gray;
+      }
+    }
+  }
+}

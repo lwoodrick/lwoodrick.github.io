@@ -1,0 +1,35 @@
+///////////////////////////////////
+//           VARIABLES           //
+///////////////////////////////////
+
+// COLORS
+
+// Individual Colors
+
+$brand-orange: #ff541e;
+$brand-blue: #2d43d0;
+$white: #fff;
+$black: #222;
+$gray: #777;
+
+// Brand Gradient
+
+$brand-gradient: linear-gradient(20deg, $brand-blue, $brand-orange);
+$black-to-blue-gradient: linear-gradient(20deg, $brand-blue, $black);
+$not-gradient: linear-gradient(20deg, #222, #222);
+
+// TYPE
+
+$font: "Titillium Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// TRANSITIONS/ANIMATIONS
+
+$transition: all 0.2s ease-in-out;
+
+// BOX MODEL STYLE
+
+$box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
+$border-white: 1px solid $white;
+$border-black: 1px solid $black;
+$border-gray: 1px solid $gray;
+$border-light-gray: 1px solid #ccc;

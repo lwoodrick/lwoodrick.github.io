@@ -1,0 +1,41 @@
+///////////////////////////////////
+//          TYPOGRAPHY           //
+///////////////////////////////////
+
+body {
+  background: $white;
+  font-family: $font;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+::selection {
+  color: $black;
+  background: yellow;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: lowercase;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+h1 {
+  color: $black;
+  font-family: $font;
+  font-size: 1.75em;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: lowercase;
+  margin: 1rem auto 0 auto;
+}
+h1 span {
+  display: inline-block;
+  padding: 0 0.25em;
+}
+h1 span:first-child {
+  font-size: 2.5rem;
+}

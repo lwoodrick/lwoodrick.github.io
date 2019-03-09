@@ -1,0 +1,66 @@
+///////////////////////////////////
+//        LAYOUT ELEMENTS        //
+///////////////////////////////////
+
+html {
+  scroll-behavior: smooth;
+}
+
+// Grid Sections
+
+.rows {
+  width: 100vw;
+  height: 100vh;
+}
+
+.row {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 2rem;
+}
+
+.content {
+  height: 100vh;
+  max-width: 1500px;
+  margin: auto;
+
+  &--flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-height: 900px) {
+    margin: 0 auto;
+  }
+}
+
+// Section Components
+
+.section-title {
+  @extend .fs-1-5;
+  font-weight: 200;
+  line-height: 1.25;
+}
+
+.section-lede {
+  @extend .fs-6;
+  line-height: 1;
+  margin: 0 0 2rem 0;
+
+  @media (max-width: 600px) {
+    margin-bottom: 1rem;
+  }
+}
+
+.section-sidebar {
+  padding: 0 1rem;
+  border: $border-white;
+}
+
+.section-text {
+  @extend .fs-2;
+  font-weight: 200;
+}
