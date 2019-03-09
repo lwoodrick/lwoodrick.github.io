@@ -144,3 +144,13 @@ $positions: (
 
 .fl-left { float: left; }
 .fl-right { float: right; }
+
+// COLUMNS
+
+.is-two-columns {
+  columns: 2;
+
+  @media (max-width: 600px) {
+    columns: 1;
+  }
+}

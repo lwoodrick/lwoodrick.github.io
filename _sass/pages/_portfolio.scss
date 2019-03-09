@@ -225,6 +225,7 @@
     .section-copy-2 {
       @extend .section-copy;
       grid-area: copy-2;
+      columns: 1;
     }
 
     .section-thumbnail-1 { grid-area: image-1; @extend .section-thumbnail }
