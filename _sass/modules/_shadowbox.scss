@@ -1,0 +1,67 @@
+body { background-color: #efefef !important; }
+
+.content--portfolio {
+  position: relative;
+  margin: 0 auto;
+  grid-template:
+    "header header header"
+    "image-1 image-2 image-3";
+  grid-template-rows: 8rem 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  h1.header {
+    grid-area: header;
+    font-size: 4rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    color: #444;
+  }
+}
+
+// SCSS Additions
+
+img[thumbnail] {
+  cursor: pointer;
+}
+
+.shadow-box {
+  background-color: rgba(0,0,0,0);
+  transition: background-color 0.2s ease-in;
+}
+
+.shadow-box:not(:empty) {
+  position: fixed;
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  background-color: rgba(0,0,0,0.8);
+
+  img {
+    display: block;
+    margin: 4rem auto;
+    animation: image-fade-in 0.2s ease-in;
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+.closing {
+  animation: image-fade-out 0.2s ease-out;
+}
+
+@keyframes shadow-box-fade-in {
+  from { background-color: rgba(0,0,0,0); }
+  to { background-color: rgba(0,0,0,0.8); }
+}
+@keyframes image-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes image-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.shadow-box:not(:empty) + .content--portfolio {
+  overflow-y: hidden;
+}

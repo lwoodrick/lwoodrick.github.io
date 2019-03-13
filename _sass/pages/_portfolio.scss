@@ -3,6 +3,8 @@
 ///////////////////////////////////
 
 .content--portfolio {
+  position: relative;
+  z-index: 1;
   padding: 1rem;
   margin: 0 auto;
   max-width: 1200px;
