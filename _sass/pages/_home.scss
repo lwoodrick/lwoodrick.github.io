@@ -1,20 +1,16 @@
 ///////////////////////////////////
 //           HOME PAGE           //
 ///////////////////////////////////
-
-
 //////////////////
 // Sections
 //////////////////
-
-
 // Intro/Nameplate
-
 .row--nameplate {
   // Generic Row Styles for Reference:
   // grid-template-rows: auto;
   // grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: ". nameplate .";
+
   .content {
     grid-area: nameplate;
   }
@@ -25,9 +21,7 @@
   height: 20rem;
   margin: 0 auto;
 }
-
 // About Me
-
 .row--about {
   // Generic Row Styles for Reference:
   // grid-template-rows: auto;
@@ -35,18 +29,14 @@
   background: $brand-gradient;
   height: 100vh;
   grid-template-rows: 1fr 2fr 1fr;
-  grid-template-areas:
-    ". . ."
-    "about about about"
-    ". . .";
+  grid-template-areas: ". . ." "about about about" ". . .";
+
   .content {
     grid-area: about;
   }
-
   @media (max-width: 1024px) {
     grid-template-rows: auto;
-    grid-template-areas:
-      "about about about";
+    grid-template-areas: "about about about";
   }
 }
 
@@ -56,33 +46,24 @@
   max-height: 50rem;
   grid-template-rows: 4rem calc(100% - 4rem);
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "section-name . ."
-    "copy . skills";
-
+  grid-column-gap: 2rem;
+  grid-template-areas: "section-name skills skills" "copy skills skills";
   @media (max-width: 1300px) {
-    grid-template-areas:
-      "section-name . ."
-      "copy copy skills";
+    grid-template-areas: "section-name skills skills" "copy skills skills";
   }
-
   @media (max-width: 768px) {
     margin: unset;
     grid-template-columns: 1fr;
     grid-template-rows: 3rem 1fr 1fr;
-    grid-template-areas:
-      "section-name"
-      "copy"
-      "skills";
+    grid-template-areas: "section-name" "copy" "skills";
   }
-
   // Grid Area Assignment
   .section-title {
     grid-area: section-name;
   }
+
   .section-copy {
     grid-area: copy;
-
     @media (max-width: 1300px) {
       margin-right: 2rem;
     }
@@ -93,63 +74,164 @@
 
   .section-sidebar__container {
     grid-area: skills;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $white;
+  }
+    .svg-container {
+      position: relative;
+      z-index: 1;
+      left: -115%;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      transition: left 0.2s ease-in;
+
+      & > svg {
+        position: relative;
+        flex: 0 0 100%;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    svg.style--visual {
+      animation: visual-animation 0.5s infinite alternate cubic-bezier(.08,.6,.69,.97);
+    }
+    @keyframes visual-animation {
+      0% {
+        left: -10px;
+        top: 5px;
+      }
+
+      25% {
+        left: -5px;
+        top: 2.5px;
+      }
+
+      50% {
+        left: 0;
+        top: 0;
+      }
+
+      75% {
+        left: 5px;
+        top: 2.5px;
+      }
+
+      100% {
+        left: 10px;
+        top: 5px;
+      }
+    }
+
+    svg.style--dev path.hand--1 {
+      transform-origin: 205px 376px;
+      animation: dev-animation 0.2s infinite alternate-reverse cubic-bezier(.08,.6,.69,.97);
+    }
+
+    svg.style--dev path.hand--2 {
+      transform-origin: 292px 400px;
+      animation: dev-animation 0.2s infinite alternate cubic-bezier(.08,.6,.69,.97);
+    }
+    @keyframes dev-animation {
+      0% {
+        transform: rotate(-15deg);
+      }
+      100% {
+        transform: rotate(15deg);
+      }
+    }
+
+    svg.style--ux path.body {
+      animation: ux-animation 1s infinite alternate ease-in-out;
+    }
+    @keyframes ux-animation {
+      from {
+        transform: translateY(10px);
+      }
+
+      to {
+        transform: translateY(0px);
+      }
+    }
+
+  .style-selector {
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+    left: 1rem;
+
+    a {
+      display: inline-block;
+      border: 1px solid #fff;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+    }
+    a.selected {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    a:hover, li a:focus {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
   }
 
   .section-sidebar {
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+    right: 1rem;
     align-self: flex-start;
     max-width: 20rem;
-    margin-top: 1rem;
     margin-left: auto;
-
     @media (max-width: 768px) {
       margin-top: 0;
       max-width: none;
     }
   }
+
   .section-link {
+    position: absolute;
+    z-index: 2;
+    right: 2rem;
+    bottom: 6rem;
     margin-right: 0;
     border-bottom: 0;
     background-color: inherit;
 
-    &:link, &:visited {
+    &:link,
+    &:visited {
       border-bottom: none;
     }
 
-    &:hover, &:focus {
+    &:focus,
+    &:hover {
       border-bottom: none;
       background: none !important;
     }
   }
 }
-
 // Work Listing
-
 .row--work {
   // Generic Row Styles for Reference:
   // grid-template-rows: auto;
   // grid-template-columns: 1fr 1fr 1fr;
   height: 100vh;
   grid-template-rows: 1fr 55rem 1fr;
-  grid-template-areas:
-    ". . ."
-    "work work work"
-    ". . .";
-  background: url('../images/planes.svg');
+  grid-template-areas: ". . ." "work work work" ". . .";
+  background: url("../images/planes.svg");
   background-size: auto 90%;
   background-position: bottom right;
   background-repeat: no-repeat;
   overflow: hidden;
+
   .content {
     grid-area: work;
   }
-
   @media (max-width: 1024px) {
     background: $black-to-blue-gradient;
-    grid-template-areas:
-      "work work work";
+    grid-template-areas: "work work work";
     grid-template-rows: auto;
     overflow: auto;
     height: auto;
@@ -161,46 +243,35 @@
   color: #222;
   grid-template-rows: 4rem 24rem 17rem;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "section-name work work"
-    "copy work work"
-    "copy work work";
-
+  grid-column-gap: 2rem;
+  grid-template-areas: "section-name work work" "copy work work" "copy work work";
   @media (max-width: 1024px) {
     grid-template-rows: 4rem 24rem auto;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "section-name work"
-      "copy work"
-      "copy work";
+    grid-template-areas: "section-name work" "copy work" "copy work";
   }
-
   @media (max-width: 768px) {
     grid-template-rows: 3rem auto auto;
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "section-name"
-      "copy"
-      "work";
+    grid-template-areas: "section-name" "copy" "work";
   }
-
   // Grid Area Assignment
   .section-title {
     grid-area: section-name;
-
     @media (max-width: 1024px) {
       color: $white;
     }
   }
+
   .section-copy {
     grid-area: copy;
-
     @media (max-width: 1024px) {
       background-color: $white;
       padding: 1.5rem;
       align-self: start;
     }
   }
+
   .section-sidebar {
     grid-area: work;
     display: flex;
@@ -212,21 +283,19 @@
     margin-right: 6rem;
     padding: 2rem;
     border: none;
-
     @media (max-width: 1024px) {
       margin-right: 0;
       background: none;
       justify-content: unset;
       padding-top: 3rem;
-
     }
-
     @media (max-width: 768px) {
       margin-bottom: 2rem;
       padding: 0;
       justify-content: unset;
     }
   }
+
   .section-link {
     grid-area: link;
     align-self: center;
@@ -246,7 +315,8 @@
       margin-bottom: 1rem;
     }
 
-    &:hover, &:focus {
+    &:focus,
+    &:hover {
       margin-left: -1rem;
       margin-right: 1rem;
     }
@@ -256,28 +326,37 @@
       text-transform: lowercase;
       color: $gray;
 
-      span { display: inline-block; }
+      span {
+        display: inline-block;
+      }
 
-      &:hover, &:focus, &:visited {
+      &:focus,
+      &:hover,
+      &:visited {
         color: $gray;
       }
     }
+
     &__description {
       @extend .fs-1-5;
       color: $black;
 
-      &:hover, &:focus, &:visited {
+      &:focus,
+      &:hover,
+      &:visited {
         color: $black;
       }
-
       @media (max-width: 1024px) {
         line-height: 1.2;
       }
     }
+
     &__client {
       color: $gray;
 
-      &:hover, &:focus, &:visited {
+      &:focus,
+      &:hover,
+      &:visited {
         color: $gray;
       }
     }
