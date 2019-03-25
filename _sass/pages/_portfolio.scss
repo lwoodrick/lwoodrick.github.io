@@ -254,6 +254,22 @@
       @media (max-width: 600px) {
         max-width: 37.5rem;
       }
+
+      img[thumbnail] {
+        position: relative;
+      }
+
+      img[thumbnail]:after {
+        content: '';
+        display: block;
+        height: 4rem;
+        width: 4rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: 2rem solid $brand-blue;
+        box-sizing: border-box;
+      }
     }
 
     .section-thumbnail--outlined {
