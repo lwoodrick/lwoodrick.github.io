@@ -34,20 +34,23 @@ layout: home
           {% include ux-lauren.svg %}
           {% include visual-lauren.svg %}
         </div>
-        <div class="style-selector">
-          <h4 style="text-transform: capitalize;">Style <a id="style-visual" class="selected fw-400">Product Designer</a> <a id="style-dev" class="fw-400">Front-End Developer</a><a id="style-ux" class="fw-400">UX Designer</a></h4>
-        </div>
         <div class="section-sidebar">
-          <h4 class="mt-1">Technical Know-How</h4>
-          <ul class="list">
-            <li>Adobe Creative Suite + Sketch</li>
-            <li>HTML/CSS (+ Preprocessors)</li>
-            <li>Enough JavaScript to be dangerous</li>
-            <li>Plays nice with React, Phoenix, Ruby on Rails, Angular, and Ember </li>
-          </ul>
+          <div class="style-selector">
+            <h4 class="style-selector__group"><span class="style-selector__group__title">Style</span> <a id="style-visual" class="selected fw-400">Visual</a> <a id="style-dev" class="fw-400">Front-End</a><a id="style-ux" class="fw-400">UX</a></h4>
+          </div>
+          <div id="statsContainer" class="section-sidebar__stats open">
+            <h4 class="mt-05 mb-05">Technical Know-How</h4>
+            <button id="statsToggle" class="section-sidebar__stats__toggle open"><span class="open">+</span><span class="close">&ndash;</span></button>
+            <ul class="list">
+              <li>Adobe Creative Suite + Sketch</li>
+              <li>HTML/CSS (+ Preprocessors)</li>
+              <li>Enough JavaScript to be dangerous</li>
+              <li>Plays nice with React, Phoenix, Ruby on Rails, Angular, and Ember </li>
+            </ul>
+          </div>
         </div>
-        <a class="section-link section-link--reverse link-to-work" href="#work"><span>Work</span></a>
       </div>
+      <a class="section-link section-link--reverse link-to-work" href="#work"><span>Work</span></a>
     </div>
   </section>
   <section id="work" class="row row--work">

@@ -10,7 +10,6 @@ html {
 
 .rows {
   width: 100vw;
-  height: 100vh;
 }
 
 .row {
@@ -50,6 +49,10 @@ html {
   @extend .fs-6;
   line-height: 1;
   margin: 0 0 2rem 0;
+
+  @media (max-width: 1300px) {
+    margin-bottom: 1rem;
+  }
 
   @media (max-width: 600px) {
     margin-bottom: 1rem;

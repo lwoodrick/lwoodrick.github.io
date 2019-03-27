@@ -9,7 +9,7 @@ a.link--inline {
   &:visited {
     color: lighten($gray, 10%);
   }
-  
+
   &:hover, &:focus {
     color: $black;
     background-color: yellow;
@@ -63,20 +63,7 @@ a.section-link.link-to-about {
 }
 a.link-to-work {
   justify-self: center;
-  bottom: 3rem;
-
-  @media (max-width: 1300px), (max-height: 800px){
-    bottom: 8rem;
-  }
-
-  @media (max-width: 768px) {
-
-    &:before, &:after {
-      display: none;
-    }
-
-    bottom: 4rem;
-  }
+  bottom: -3rem;
 }
 
 // Ribbon Links
