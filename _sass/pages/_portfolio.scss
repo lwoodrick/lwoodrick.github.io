@@ -230,6 +230,10 @@
       columns: 1;
     }
 
+    div[class^="section-thumbnail-"] {
+      position: relative;
+    }
+
     .section-thumbnail-1 { grid-area: image-1; @extend .section-thumbnail }
 
     .section-thumbnail-2 { grid-area: image-2; @extend .section-thumbnail }
@@ -286,6 +290,23 @@
         left: 3rem;
       }
     }
+
+  .section-thumbnail-reference {
+    display: inline-block;
+    padding: 0.25rem 0.45rem;
+    line-height: 1;
+    background-color: $gray;
+    color: $white;
+    font-weight: bold;
+    border-radius: 50%;
+    text-indent: 0;
+  }
+
+  img[thumbnail] + .section-thumbnail-reference {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
 
   .section-sidebar {
     grid-area: sidebar;
