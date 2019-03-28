@@ -32,7 +32,12 @@
 }
 
 .logotype__auxiliary-text {
-  &> span { display: inline-block; width: 100%; text-align: center;}
+  &> span {
+    display: inline-block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
 
   &> span:first-child {
     @media (max-width: 380px) { font-size: 2rem; }
