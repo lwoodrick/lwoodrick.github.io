@@ -314,20 +314,16 @@
   // Generic Row Styles for Reference:
   // grid-template-rows: auto;
   // grid-template-columns: 1fr 1fr 1fr;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   grid-template-rows: 1fr 55rem 1fr;
   grid-template-areas: ". . ." "work work work" ". . .";
-  background: url("../images/planes.svg");
-  background-size: auto 90%;
-  background-position: bottom right;
-  background-repeat: no-repeat;
   overflow: hidden;
 
   .content {
     grid-area: work;
   }
   @media (max-width: 1024px) {
-    background: $black-to-blue-gradient;
     grid-template-areas: "work work work";
     grid-template-rows: auto;
     // overflow: auto;
@@ -377,7 +373,7 @@
     flex-direction: column;
     align-self: flex-start;
     // height: 100%;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-right: 6rem;
     padding: 2rem;
     border: none;
@@ -401,13 +397,62 @@
 
   .case-study {
     display: block;
-    background-color: $white;
-    box-shadow: $box-shadow;
+    position: relative;
     padding: 1rem;
     text-decoration: none;
     margin-left: 0;
     margin-right: 0;
     transition: $transition;
+
+    &> div {
+      position: relative;
+      z-index: 2;
+      padding: 1rem;
+      margin-top: -1rem;
+    }
+
+    &> div:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0;
+      background: linear-gradient(90deg, rgba(255,255,0,1), #fff);
+      transition: $transition;
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 3rem;
+      height: 1rem;
+      top: 0.5rem;
+      left: -3.75rem;
+      border-bottom: 1px solid $brand-blue;
+      transition: $transition;
+
+      @media (max-width: 768px) { left: -2.75rem; }
+    }
+    &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      left: -2rem;
+      top: 1rem;
+      border-bottom: 1px solid $brand-blue;
+      border-right: 1px solid $brand-blue;
+      transform: rotate(-45deg);
+      @media (max-width: 768px) { left: -1rem; }
+    }
 
     &:not(:last-child) {
       margin-bottom: 1rem;
@@ -415,8 +460,18 @@
 
     &:focus,
     &:hover {
-      margin-left: -1rem;
-      margin-right: 1rem;
+      margin-left: 1rem;
+      margin-right: -1rem;
+
+      &> div:before {
+        opacity: 1;
+      }
+
+      &:before {
+        width: 4rem;
+        left: -4.75rem;
+        @media (max-width: 768px) { left: -3.75rem; }
+      }
     }
 
     &__tag {
