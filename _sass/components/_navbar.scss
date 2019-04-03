@@ -1,0 +1,22 @@
+///////////////////////////////////
+//            NAVBAR             //
+///////////////////////////////////
+
+nav.navbar {
+  display: flex;
+  padding: 1rem 2rem;
+
+   ul {
+     list-style-type: none;
+     margin-left: auto;
+     display: inline-flex;
+
+     li:not(:first-child) {
+       margin-left: 2rem;
+
+       @media (max-width: 480px) {
+         margin-left: 1rem;
+       }
+     }
+   }
+}

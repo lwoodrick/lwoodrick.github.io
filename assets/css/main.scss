@@ -6,12 +6,13 @@
 @import "base/normalize";
 @import "base/typography";
 
-
 @import "modules/animation";
 @import "modules/layout";
 @import "modules/links";
 @import "modules/lists";
 @import "modules/shadowbox";
+
+@import "components/navbar";
 
 @import "pages/home";
 @import "pages/portfolio";

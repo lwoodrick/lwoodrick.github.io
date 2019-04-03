@@ -6,6 +6,21 @@ html {
   scroll-behavior: smooth;
 }
 
+// Main section-sidebar
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.header--portfolio {
+  position: static;
+}
+
+main {
+  margin-top: -6rem;
+}
+
 // Grid Sections
 
 .rows {
