@@ -226,12 +226,12 @@ svg.style--visual {
 // Dev
 
 svg.style--dev path.hand--1 {
-  transform-origin: 205px 376px;
+  transform-origin: 228px 376px;
   animation: dev-animation 0.2s infinite alternate-reverse cubic-bezier(.08,.6,.69,.97);
 }
 
 svg.style--dev path.hand--2 {
-  transform-origin: 292px 400px;
+  transform-origin: 329px 400px;
   animation: dev-animation 0.2s infinite alternate cubic-bezier(.08,.6,.69,.97);
 }
 @keyframes dev-animation {
