@@ -194,32 +194,35 @@
 // Visual
 
 svg.style--visual {
+  position: relative;
+}
+
+svg.style--visual path.right-ui {
+  transform: translateX(4px);
+}
+
+svg.style--visual > g.body {
   animation: visual-animation 0.5s infinite alternate cubic-bezier(.08,.6,.69,.97);
 }
 @keyframes visual-animation {
   0% {
-    left: -10px;
-    top: 5px;
+    transform: translate(-10px, 5px);
   }
 
   25% {
-    left: -5px;
-    top: 2.5px;
+    transform: translate(-5px, 2.5px);
   }
 
   50% {
-    left: 0;
-    top: 0;
+    transform: translate(0,0);
   }
 
   75% {
-    left: 5px;
-    top: 2.5px;
+    transform: translate(5px, 2.5px);
   }
 
   100% {
-    left: 10px;
-    top: 5px;
+    transform: translate(10px, 5px);
   }
 }
 
