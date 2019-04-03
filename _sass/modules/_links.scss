@@ -38,7 +38,8 @@ a.link {
 
 a.link--reverse {
   color: $white;
-  border-bottom: $border-white;
+  text-decoration: none;
+  border-bottom: 1px solid $white;
 
   &:visited {
     color: $white;
@@ -47,6 +48,7 @@ a.link--reverse {
   &:hover, &:focus {
     color: $white;
     background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid $white;
   }
 }
 
@@ -71,7 +73,7 @@ a.link-to-work {
 a.link--ribbon {
   display: block;
   position: absolute;
-  bottom: 3rem;
+  bottom: 5rem;
   z-index: 2;
   margin-left: 0;
   padding: 0.5rem 1rem;
@@ -188,14 +190,14 @@ a.section-link {
     &:before {
       width: 8.25rem;
       height: 1px;
-      top: 1.9rem;
+      top: 1.75rem;
       right: 0;
       left: -2rem;
     }
     &:hover:before, &:focus:before {
       width: 9.25rem;
       height: 1px;
-      top: 1.9rem;
+      top: 1.75rem;
       right: 0;
       left: -3rem;
     }
@@ -204,7 +206,7 @@ a.section-link {
       transform: rotate(-45deg);
       bottom: 0;
       left: -1.9rem;
-      bottom: -7px;
+      bottom: -5px;
     }
 
     &:hover:after, &:focus:after {

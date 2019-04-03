@@ -113,13 +113,16 @@ $positions: (
 // BACKGROUND COLORS
 
 .bg-black {
-  background-color: $black;
+  background: $black !important;
 }
 .bg-white {
-  background-color: $white;
+  background: $white !important;
 }
 .bg-gradient {
-  background: $brand-gradient;
+  background: $brand-gradient !important;
+}
+.bg-gradient-2 {
+  background: $black-to-blue-gradient !important;
 }
 
 // BORDER COLORS
