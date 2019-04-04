@@ -15,7 +15,7 @@ const stripSelected = () => {
 
 pickVisual.addEventListener("click", (event) => {
   stripSelected();
-  event.srcElement.classList.add("selected");
+  pickVisual.classList.add("selected");
   if (svgContainer.style.left == "-300%") {
     svgContainer.setAttribute("style", "left: -400%;");
     setTimeout(() => {
@@ -28,13 +28,13 @@ pickVisual.addEventListener("click", (event) => {
 
 pickDev.addEventListener("click", (event) => {
   stripSelected();
-  event.srcElement.classList.add("selected");
+  pickDev.classList.add("selected");
   svgContainer.setAttribute("style", "left: -200%;");
 })
 
 pickUx.addEventListener("click", (event) => {
   stripSelected();
-  event.srcElement.classList.add("selected");
+  pickUx.classList.add("selected");
   if (svgContainer.style.left == "-100%") {
     svgContainer.setAttribute("style", "left: 0;");
     setTimeout(() => {
@@ -44,15 +44,3 @@ pickUx.addEventListener("click", (event) => {
     svgContainer.setAttribute("style", "left: -300%;");
   }
 })
-
-const statsToggle = document.querySelector("#statsToggle");
-const statsContainer = document.querySelector("#statsContainer");
-
-statsToggle.addEventListener("click", (event) => {
-  statsToggle.classList.toggle("open");
-  statsContainer.classList.toggle("open");
-});
-statsContainer.addEventListener("click", (event) => {
-  statsToggle.classList.toggle("open");
-  statsContainer.classList.toggle("open");
-});

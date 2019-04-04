@@ -19,8 +19,8 @@ layout: home
   </section>
   <section id="about" class="row row--about">
     <div class="content content--about">
-      <h2 class="section-title">About</h2>
       <div class="section-copy">
+        <h2 class="section-title">About</h2>
         <h3 class="section-lede">Lauren Woodrick is a digital chimera</h3>
         <p class="section-text mb-1 pb-05">
           She currently plies her trade at <a class="link link--reverse" href="https://teamgaslight.com">Gaslight</a> as a User Experience Designer, working to architect and craft client software products from inception to launch.
@@ -34,22 +34,32 @@ layout: home
           {% include ux-lauren.svg %}
           {% include visual-lauren.svg %}
         </div>
-        <div class="section-sidebar">
-          <div class="style-selector">
-            <h4 class="style-selector__group"><span class="style-selector__group__title">Style</span> <a id="style-visual" class="selected fw-400">Visual</a> <a id="style-dev" class="fw-400">Front-End</a><a id="style-ux" class="fw-400">UX</a></h4>
-          </div>
-          <div id="statsContainer" class="section-sidebar__stats open">
-            <h4 class="mt-05 mb-05">Technical Know-How</h4>
-            <button id="statsToggle" class="section-sidebar__stats__toggle open"><span class="open">+</span><span class="close">&ndash;</span></button>
-            <ul class="list">
-              <li>Adobe Creative Suite + Sketch</li>
-              <li>HTML/CSS (+ Preprocessors)</li>
-              <li>Enough JavaScript to be dangerous</li>
-              <li>Plays nice with React, Phoenix, Ruby on Rails, Angular, and Ember </li>
-            </ul>
-          </div>
+      </div>
+    </div>
+  </section>
+  <section class="row row--about-subsection">
+    <div class="content content--about-subsection">
+      <div class="section-lede">
+        <h3>i've got skills<br/>to fit the bills</h3>
+        <a class="section-link section-link--reverse link-to-work" href="#work"><span>Let's show you what I've got</span></a>
+      </div>
+      <div class="section-sidebar">
+        <div id="statsContainer" class="section-sidebar__stats open">
+          <ul class="list">
+            <li>Adobe Creative Suite + Sketch</li>
+            <li>HTML/CSS (+ Preprocessors)</li>
+            <li>Enough JavaScript to be dangerous</li>
+            <li>Plays nice with React, Phoenix, Ruby on Rails, Angular, and Ember </li>
+          </ul>
         </div>
-        <a class="section-link section-link--reverse link-to-work" href="#work"><span>Work</span></a>
+      </div>
+      <div class="style-selector">
+        <div class="style-selector__group">
+          <span class="style-selector__group__title">Choose Variation</span>
+          <a id="style-visual" class="selected fw-400">Visual <span><i class="fas fa-paint-brush"></i></span></a>
+          <a id="style-dev" class="fw-400">Front-End <span><i class="fas fa-code"></i></span></a>
+          <a id="style-ux" class="fw-400">UX <span><i class="fas fa-lightbulb"></i></i></span></a>
+        </div>
       </div>
     </div>
   </section>
