@@ -9,7 +9,7 @@
 
 ul.list {
   @extend .fs-1;
-  margin-top: 0.5rem;
+  imargin-top: 0.5rem;
   padding-left: 1.75rem;
   line-height: 1.25;
 
@@ -32,7 +32,7 @@ ul.list {
       border-bottom: 1px solid $white;
       transition: $transition;
 
-      @media (max-width: 768px) { left: -2.75rem; }
+      @media (max-width: 768px) { width: 2rem; left: -2.75rem; }
     }
     &:after {
       content: "";
@@ -45,7 +45,7 @@ ul.list {
       border-bottom: 1px solid $white;
       border-right: 1px solid $white;
       transform: rotate(-45deg);
-      @media (max-width: 768px) { left: -1rem; }
+      @media (max-width: 768px) { left: -2rem; }
     }
 
     @media (max-width: 768px) {
