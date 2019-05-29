@@ -12,7 +12,6 @@ html {
   position: sticky;
   top: 0;
   z-index: 3;
-  background-color: $white;
 
   @media (max-width: 768px) {
     position: static;

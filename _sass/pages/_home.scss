@@ -118,7 +118,6 @@
     @media (max-width: 768px) {
       flex-basis: 100%;
       padding-right: 0;
-      padding-left: 0;
     }
   }
 
@@ -324,6 +323,12 @@
 
   }
 }
+
+.row--about .section-sidebar__container {
+  @media (max-width: 1030px) {
+      padding-left: 0;
+    }
+  }
 // Work Listing
 
 .row--work {
