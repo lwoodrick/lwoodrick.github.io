@@ -8,6 +8,7 @@
 // Standard List
 
 ul.list {
+  @extend .fs-1;
   margin-top: 0.5rem;
   padding-left: 1.75rem;
   line-height: 1.25;
